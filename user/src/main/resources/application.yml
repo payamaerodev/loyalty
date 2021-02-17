@@ -1,0 +1,34 @@
+server:
+  port: 6060
+spring:
+  application:
+    name: ${LOYALTY_SERVICE_NAME:loyalty-service}
+  datasource:
+    url: ${LOYALTY_DATA_SOURCE_URL:jdbc:postgresql://db/loyalty}
+    username: ${LOYALTY_DATA_SOURCE_USERNAME:postgres}
+    password: ${LOYALTY_DATA_SOURCE_PASSWORD:postgres}
+    driver-class-name: ${LOYALTY_DATA_SOURCE_DRIVER:org.postgresql.Driver}
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 20
+      idle-timeout: 120000
+      connection-timeout: 30000
+      leak-detection-threshold: 30000
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+keycloak:
+  realm: wallet
+  auth-server-url: https://sso.hamrasta.com/auth/
+  resource: exchange-management
+  ssl-required: external
+  principal-attribute: preferred_username
+  cors: false
+  use-resource-role-mappings: true
+  credentials:
+    secret: 03f9777b-fa2d-427a-b498-1c2d4406523d
