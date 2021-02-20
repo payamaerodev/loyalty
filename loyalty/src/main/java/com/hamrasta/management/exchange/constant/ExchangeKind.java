@@ -1,4 +1,4 @@
-package com.hamrasta.management.user.constant;
+package com.hamrasta.management.exchange.constant;
 
 
 public enum ExchangeKind {

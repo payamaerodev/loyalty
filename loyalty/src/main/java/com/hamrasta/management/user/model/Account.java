@@ -1,11 +1,11 @@
 package com.hamrasta.management.user.model;
 
+import com.hamrasta.management.exchange.model.Exchange;
 import com.hamrasta.trellis.data.sql.model.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Set;
 
 
 @Entity
@@ -26,6 +26,9 @@ public class Account extends BaseEntity {
     @Column(name = "blocked_balance")
     private BigDecimal blockedBalance;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn()
+    private Set<Exchange> exchanges;
 
     public String getPassword() {
         return password;

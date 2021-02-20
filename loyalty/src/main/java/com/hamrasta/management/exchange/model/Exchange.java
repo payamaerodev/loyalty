@@ -1,19 +1,17 @@
 package com.hamrasta.management.exchange.model;
 
-import com.hamrasta.management.user.constant.ExchangeKind;
+import com.hamrasta.management.exchange.constant.ExchangeKind;
+import com.hamrasta.management.user.model.Account;
 import com.hamrasta.trellis.data.sql.model.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "t_exchange")
 public class Exchange extends BaseEntity {
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(name = "exchange_kind")
     private ExchangeKind exchangeKind;
 
@@ -37,6 +35,12 @@ public class Exchange extends BaseEntity {
 
     @Column(name = "buy")
     private Boolean buy;
+
+
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn()
+    private Account account;
 
     public ExchangeKind getExchangeKind() {
         return exchangeKind;

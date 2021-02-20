@@ -16,7 +16,7 @@ spring:
       leak-detection-threshold: 30000
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       javax:
         persistence:
