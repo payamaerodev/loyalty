@@ -17,7 +17,7 @@
     <description>a sample to use trellis</description>
 
     <modules>
-        <module>loyalty</module>
+        <module>election</module>
     </modules>
 
     <properties>

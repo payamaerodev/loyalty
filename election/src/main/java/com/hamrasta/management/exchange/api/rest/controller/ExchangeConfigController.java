@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/exchange-management/exchanges/configs")
 public class ExchangeConfigController  implements IController {
 
-    @GetMapping("")
+    @GetMapping("/test")
     public ResponseEntity<Page<BrowseExchangeConfigResponse>> browse(@RequestParam(defaultValue = "0") @Range(name = "page", min = 0) Integer page,
                                  @RequestParam(defaultValue = "20") @Range(name = "size", min = 1, max = 20) Integer size,
                                  @RequestParam TokenKind src,
                                  @RequestParam TokenKind dest) throws Throwable {
-        return ResponseEntity.ok(call(BrowseExchangeConfigAction.class, new BrowseExchangeConfigRequest(src,dest),page,size));
+        return ResponseEntity.ok(call(BrowseExchangeConfigAction.class, new BrowseExchangeConfigRequest(),page,size));
     }
 }

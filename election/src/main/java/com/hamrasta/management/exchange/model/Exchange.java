@@ -16,7 +16,7 @@ public class Exchange extends BaseEntity {
     private ExchangeKind exchangeKind;
 
     @Column(name = "src_account_id")
-    private Integer srcAccountId;
+    private String srcAccountId;
 
     @Column(name = "src_amount")
     private Integer srcAmount;
@@ -38,8 +38,8 @@ public class Exchange extends BaseEntity {
 
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn()
+    @ManyToOne()
+//    @JoinColumn(name = "src_account_id")
     private Account account;
 
     public ExchangeKind getExchangeKind() {
@@ -50,13 +50,6 @@ public class Exchange extends BaseEntity {
         this.exchangeKind = exchangeKind;
     }
 
-    public Integer getSrcAccountId() {
-        return srcAccountId;
-    }
-
-    public void setSrcAccountId(Integer srcAccountId) {
-        this.srcAccountId = srcAccountId;
-    }
 
     public Integer getSrcAmount() {
         return srcAmount;

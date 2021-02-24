@@ -17,6 +17,7 @@ public class Account extends BaseEntity {
     @Column(name = "user_id")
     private Integer userId;
 
+
     @Column(name = "token_id")
     private Integer tokenId;
 
@@ -27,7 +28,7 @@ public class Account extends BaseEntity {
     private BigDecimal blockedBalance;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn()
+    @JoinColumn(name = "src_account_id")
     private Set<Exchange> exchanges;
 
     public String getPassword() {

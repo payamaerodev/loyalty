@@ -23,9 +23,8 @@ public class BrowseExchangeConfigRequest extends RequestMessage {
         this.dest = dest;
     }
 
-    public BrowseExchangeConfigRequest(TokenKind src, TokenKind dest) {
-        setSrc(src);
-        setDest(dest);
+    public BrowseExchangeConfigRequest() {
+
     }
 
     @Override

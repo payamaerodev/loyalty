@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IBrowseTransferRepository extends IBaseRepository<Exchange> {
     @Query("SELECT e from Exchange e " +
-            "LEFT outer join e.account a " +
-            "WHERE (e.exchangeKind='SEND' OR e.exchangeKind='RECEIVE')")
+            "LEFT outer join e.account a "
+            +            "WHERE (e.exchangeKind=com.hamrasta.management.exchange.constant.ExchangeKind.SEND)")
     Page<Exchange> getTransfer( Pageable pageable);
 
 
