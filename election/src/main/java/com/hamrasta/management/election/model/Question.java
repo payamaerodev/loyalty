@@ -15,12 +15,6 @@ public class Question extends BaseEntity {
     @Column(name = "question_content")
     private String questionContent;
 
-    @Column(name = "answer_content")
-    private String answerContent;
-
-    @Column(name = "question_weight")
-    private Integer questionWeight;
-
     public Integer getNumber() {
         return number;
     }
@@ -35,21 +29,5 @@ public class Question extends BaseEntity {
 
     public void setQuestionContent(String questionContent) {
         this.questionContent = questionContent;
-    }
-
-    public String getAnswerContent() {
-        return answerContent;
-    }
-
-    public void setAnswerContent(String answerContent) {
-        this.answerContent = answerContent;
-    }
-
-    public Integer getQuestionWeight() {
-        return questionWeight;
-    }
-
-    public void setQuestionWeight(Integer questionWeight) {
-        this.questionWeight = questionWeight;
     }
 }

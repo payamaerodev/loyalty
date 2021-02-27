@@ -13,8 +13,16 @@ public class cost extends BaseEntity {
     @Column(name = "election_id")
     private String electionId;
 
-    @Column(name = "cost1")
-    private String cost1;
+    @Column(name = "type")
+    private String type;
+
+    @Column(name = "value")
+    private String value;
+
+    @Column(name = "description")
+    private String description;
+
+
 
     public String getElectionId() {
         return electionId;
@@ -24,44 +32,27 @@ public class cost extends BaseEntity {
         this.electionId = electionId;
     }
 
-    public String getCost1() {
-        return cost1;
+    public String getType() {
+        return type;
     }
 
-    public void setCost1(String cost1) {
-        this.cost1 = cost1;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getCost2() {
-        return cost2;
+    public String getValue() {
+        return value;
     }
 
-    public void setCost2(String cost2) {
-        this.cost2 = cost2;
+    public void setValue(String value) {
+        this.value = value;
     }
 
-    public String getCost3() {
-        return cost3;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCost3(String cost3) {
-        this.cost3 = cost3;
+    public void setDescription(String description) {
+        this.description = description;
     }
-
-    public String getTotal() {
-        return total;
-    }
-
-    public void setTotal(String total) {
-        this.total = total;
-    }
-
-    @Column(name = "cost2")
-    private String cost2;
-
-    @Column(name = "cost3")
-    private String cost3;
-
-    @Column(name = "total")
-    private String total;
 }

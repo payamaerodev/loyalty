@@ -4,7 +4,7 @@ spring:
   application:
     name: ${LOYALTY_SERVICE_NAME:loyalty-service}
   datasource:
-    url: ${LOYALTY_DATA_SOURCE_URL:jdbc:postgresql://db/loyalty}
+    url: ${LOYALTY_DATA_SOURCE_URL:jdbc:postgresql://db/election}
     username: ${LOYALTY_DATA_SOURCE_USERNAME:postgres}
     password: ${LOYALTY_DATA_SOURCE_PASSWORD:postgres}
     driver-class-name: ${LOYALTY_DATA_SOURCE_DRIVER:org.postgresql.Driver}
@@ -16,7 +16,7 @@ spring:
       leak-detection-threshold: 30000
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       javax:
         persistence:

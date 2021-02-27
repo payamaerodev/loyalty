@@ -22,35 +22,6 @@ public class Vote extends BaseEntity {
     @Column(name = "verified")
     private Date verified;
 
-    public String getVoterId() {
-        return voterId;
-    }
 
-    public void setVoterId(String voterId) {
-        this.voterId = voterId;
-    }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getValidated() {
-        return validated;
-    }
-
-    public void setValidated(String validated) {
-        this.validated = validated;
-    }
-
-    public Date getVerified() {
-        return verified;
-    }
-
-    public void setVerified(Date verified) {
-        this.verified = verified;
-    }
-}
+   }
